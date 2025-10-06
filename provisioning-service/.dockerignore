@@ -1,0 +1,19 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+provisioning-service
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Development files
+.git
+.gitignore
+README.md
+.env

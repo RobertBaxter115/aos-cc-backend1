@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Read(//Users/parham/Downloads/aos-cc-backend1/provisioning-service/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -22,14 +22,19 @@ services:
       redis:
         condition: service_healthy
 
-  # provisioning-service:
-  #   build: ./provisioning-service
-  #   environment:
-  #     - REDIS_ADDR=redis:6379
-  #     - NODE_API_URL=http://node-api:8080
-  #   depends_on:
-  #     - redis
-  #     - node-api
+  provisioning-service:
+    build: ./provisioning-service
+    ports:
+      - "8081:8081"
+    environment:
+      - APP_REDIS_ADDR=redis:6379
+      - APP_NODE_API_BASE_URL=http://node-api:8080
+      - APP_SERVER_PORT=8081
+    depends_on:
+      redis:
+        condition: service_healthy
+      node-api:
+        condition: service_started
 
   user-simulator:
     build: ./user-simulator
